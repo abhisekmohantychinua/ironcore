@@ -1064,7 +1064,7 @@ section p {
 }
 
 .faq-question::after {
-  content: '+';
+  content: "+";
   position: absolute;
   right: 0;
   font-size: 1.2rem;
@@ -1094,7 +1094,7 @@ section p {
 .contact-cta {
   text-align: center;
 }
-.contact-cta button{
+.contact-cta button {
   margin-left: 5px;
   margin-right: 5px;
 }
@@ -1103,10 +1103,93 @@ section p {
    Footer
    =========================== */
 .footer {
-  text-align: center;
-  padding: var(--space-md) 0;
-  background-color: var(--color-dark);
+  background: var(--color-dark);
   color: var(--color-light);
+  padding: var(--space-xl) 0 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-lg);
+}
+
+.footer-about .footer-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  margin-bottom: var(--space-sm);
+}
+.footer-about .footer-logo img {
+  max-width: 50px; /* keeps logo compact */
+  height: auto; /* maintains aspect ratio */
+  display: block;
+}
+
+.footer-about p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+}
+
+.footer-social a {
+  display: inline-block;
+  margin-right: var(--space-sm);
+  font-size: 1.2rem;
+  color: var(--color-light);
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: var(--color-accent);
+}
+
+.footer-links h4,
+.footer-contact h4,
+.footer-map h4 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  margin-bottom: var(--space-sm);
+  color: var(--color-accent);
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: var(--color-light);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: var(--color-accent);
+}
+
+.footer-contact p {
+  font-size: 0.9rem;
+  margin: 0.4rem 0;
+}
+
+.footer-map iframe {
+  border-radius: var(--radius-md);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: var(--space-md);
+  background: var(--color-darker);
+  margin-top: var(--space-lg);
+  font-size: 0.85rem;
 }
 
 /* ===========================
