@@ -46,7 +46,13 @@
 
     <!-- HERO SECTION -->
     <section id="hero" class="hero-heroes" aria-label="Iron Core hero section">
-      <div class="hero-bg" role="img" aria-hidden="true"></div>
+      <div class="hero-video-container">
+        <video autoplay muted loop playsinline>
+          <source src="assets/videos/about.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="hero-video-overlay"></div>
+      </div>
 
       <div class="container hero-inner">
         <div class="hero-left">
@@ -65,12 +71,16 @@
 
           <div class="hero-ctas">
             <button class="btn btn-cta-primary" id="joinNow">Join Now</button>
-            <button class="btn btn-cta-secondary" id="viewPrograms">
-              View Programs
+            <button
+              class="btn btn-cta-secondary open-modal"
+              id="viewPrograms"
+              data-modal="#bookCallModal"
+            >
+              Book a call
             </button>
           </div>
 
-          <ul class="hero-stats" aria-hidden="false">
+          <ul class="hero-stats">
             <li>
               <strong class="stat-number" data-target="1200">0</strong
               ><span>Members</span>
@@ -85,22 +95,10 @@
             </li>
           </ul>
         </div>
-
-        <div class="hero-right" aria-hidden="false">
-          <div
-            class="hero-image"
-            role="img"
-            aria-label="Athlete training in gym"
-          >
-            <!-- use background image in CSS; keep <img> as fallback if you prefer -->
-            <img src="assets/images/hero-portrait.png" alt="Athlete training" />
-          </div>
-        </div>
       </div>
 
       <a class="hero-scroll" href="#about" aria-label="Scroll to about section">
         <span class="chev">⌄</span>
-        <span class="sr-only">Scroll to next section</span>
       </a>
     </section>
 
@@ -300,47 +298,49 @@
         <!-- Comparison Table -->
         <div class="pricing-comparison">
           <h3>Plan Comparison</h3>
-          <div class="comparison-grid">
-            <div class="comparison-header">
-              <div>Feature</div>
-              <div>Starter</div>
-              <div>Pro</div>
-              <div>Elite</div>
-            </div>
+          <div class="comparison-scroll">
+            <div class="comparison-grid">
+              <div class="comparison-header">
+                <div>Feature</div>
+                <div>Starter</div>
+                <div>Pro</div>
+                <div>Elite</div>
+              </div>
 
-            <div class="comparison-row">
-              <div>Gym Access</div>
-              <div>Operational Hours</div>
-              <div>24/7</div>
-              <div>24/7 (Priority)</div>
-            </div>
+              <div class="comparison-row">
+                <div>Gym Access</div>
+                <div>Operational Hours</div>
+                <div>24/7</div>
+                <div>24/7 (Priority)</div>
+              </div>
 
-            <div class="comparison-row">
-              <div>Group Classes</div>
-              <div>✔</div>
-              <div>✔</div>
-              <div>✔</div>
-            </div>
+              <div class="comparison-row">
+                <div>Group Classes</div>
+                <div>✔</div>
+                <div>✔</div>
+                <div>✔</div>
+              </div>
 
-            <div class="comparison-row">
-              <div>Personal Training</div>
-              <div>✖</div>
-              <div>✔</div>
-              <div>✔ (Weekly)</div>
-            </div>
+              <div class="comparison-row">
+                <div>Personal Training</div>
+                <div>✖</div>
+                <div>✔</div>
+                <div>✔ (Weekly)</div>
+              </div>
 
-            <div class="comparison-row">
-              <div>Nutrition Guidance</div>
-              <div>✖</div>
-              <div>✖</div>
-              <div>✔</div>
-            </div>
+              <div class="comparison-row">
+                <div>Nutrition Guidance</div>
+                <div>✖</div>
+                <div>✖</div>
+                <div>✔</div>
+              </div>
 
-            <div class="comparison-row">
-              <div>Workshops & Events</div>
-              <div>✖</div>
-              <div>✔</div>
-              <div>✔ (VIP)</div>
+              <div class="comparison-row">
+                <div>Workshops & Events</div>
+                <div>✖</div>
+                <div>✔</div>
+                <div>✔ (VIP)</div>
+              </div>
             </div>
           </div>
         </div>
@@ -470,12 +470,61 @@
       </div>
     </section>
 
+    <!-- FAQS SECTION  -->
+    <section id="faq" class="faq-section">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">What are your gym timings?</div>
+          <div class="faq-answer">
+            We are open Monday to Saturday from 6:00 AM to 10:00 PM. Sundays are
+            for rest and maintenance.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do you offer personal training?</div>
+          <div class="faq-answer">
+            Yes, we have certified personal trainers available. You can book a
+            session via our contact form or at the reception.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What memberships do you offer?</div>
+          <div class="faq-answer">
+            We offer monthly, quarterly, and yearly memberships. Students and
+            corporate discounts are also available.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Is there a trial session?</div>
+          <div class="faq-answer">
+            Yes! We offer a free trial session for first-time visitors. Book via
+            our contact form or call us directly.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do you have nutrition guidance?</div>
+          <div class="faq-answer">
+            Absolutely! Our trainers provide basic nutrition tips and customized
+            diet plans on request.
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA Section -->
     <section id="contact" class="contact-cta">
       <div class="container" style="text-align: center">
         <h2>Get in Touch</h2>
         <button class="btn btn-primary" id="openModal">
           Send Us a Message
+        </button>
+        <button
+          class="btn btn-cta-secondary open-modal"
+          id="viewPrograms"
+          data-modal="#bookCallModal"
+        >
+          Book a call
         </button>
       </div>
     </section>
@@ -505,6 +554,38 @@
         </form>
       </div>
     </div>
+    <div
+      id="bookCallModal"
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="bookCallTitle"
+    >
+      <div class="modal-content">
+        <span class="close" role="button" aria-label="Close modal"
+          >&times;</span
+        >
+        <h3 id="bookCallTitle">Schedule a Call</h3>
+
+        <form id="bookCallForm" class="book-call-form">
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Your Phone Number"
+            required
+          />
+          <input
+            type="datetime-local"
+            name="datetime"
+            placeholder="Select date & time"
+            required
+          />
+          <button type="submit" class="btn btn-primary">Request Call</button>
+          <p class="form-feedback" data-feedback style="margin-top: 10px"></p>
+        </form>
+      </div>
+    </div>
+
     <script src="js/main.js"></script>
   </body>
 </html>

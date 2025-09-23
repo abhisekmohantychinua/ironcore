@@ -1,79 +1,192 @@
+/* ---------------------
+   NAV TOGGLE (unchanged)
+   --------------------- */
 const navToggle = document.querySelector('.nav-toggle');
 const nav = document.querySelector('.nav');
-
-navToggle.addEventListener('click', () => {
-  nav.classList.toggle('active');
-
-  // Animate hamburger into X
-  navToggle.classList.toggle('open');
-});
-
-// Modal functionality
-const modal = document.getElementById('ctaModal');
-const closeModal = document.querySelector('.modal .close');
-const ctaForm = document.getElementById('ctaForm');
-const formFeedback = document.getElementById('formFeedback');
-
-// FIX: support multiple open modal buttons
-const openModalBtns = document.querySelectorAll('.open-modal, #openModal');
-
-openModalBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    modal.style.display = 'block';
+if (navToggle && nav) {
+  navToggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    navToggle.classList.toggle('open');
   });
-});
+}
 
-closeModal.addEventListener('click', () => {
-  modal.style.display = 'none';
-  formFeedback.textContent = '';
-  ctaForm.reset();
-});
-
-window.addEventListener('click', (e) => {
-  if (e.target === modal) {
-    modal.style.display = 'none';
-    formFeedback.textContent = '';
-    ctaForm.reset();
-  }
-});
-
-// Helper to get CSS variable value
+/* ---------------------
+   Helper: read CSS var
+   --------------------- */
 function getCSSVar(name) {
   return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 }
 
-// Fake form submission
-ctaForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  formFeedback.textContent = 'Sending...';
-  formFeedback.style.color = getCSSVar('--color-primary'); // FIXED
+/* ---------------------
+   Modal system (generic)
+   --------------------- */
+function openModal(modalEl) {
+  if (!modalEl) return;
+  modalEl.style.display = 'block';
+  modalEl.setAttribute('aria-hidden', 'false');
 
-  setTimeout(() => {
-    // Randomly simulate success or failure
-    const success = Math.random() > 0.2; // 80% chance success
-    if (success) {
-      formFeedback.textContent = 'Message sent successfully!';
-      formFeedback.style.color = getCSSVar('--color-accent'); // FIXED
-      ctaForm.reset();
-    } else {
-      formFeedback.textContent = 'Something went wrong. Try again.';
-      formFeedback.style.color = getCSSVar('--color-red'); // FIXED
-    }
-  }, 1500);
+  // If modal contains a datetime-local input, set min to now (local)
+  const dt = modalEl.querySelector('input[type="datetime-local"], input[name="datetime"]');
+  if (dt) {
+    const now = new Date();
+    // adjust for timezone offset so ISO is local
+    now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+    dt.min = now.toISOString().slice(0, 16);
+  }
+
+  // focus first field for accessibility
+  const first = modalEl.querySelector('input, textarea, button');
+  if (first) first.focus();
+}
+
+function closeModal(modalEl) {
+  if (!modalEl) return;
+  modalEl.style.display = 'none';
+  modalEl.setAttribute('aria-hidden', 'true');
+
+  // reset any form inside
+  const form = modalEl.querySelector('form');
+  if (form) {
+    form.reset();
+    const fb = form.querySelector('[data-feedback], #formFeedback');
+    if (fb) fb.textContent = '';
+  }
+}
+
+// Open triggers — supports data-modal attribute, legacy .open-modal and #openModal
+const modalTriggers = document.querySelectorAll('[data-modal], .open-modal, #openModal');
+modalTriggers.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    // dataset.modal preferred; fallback to #ctaModal (legacy)
+    const selector = btn.dataset && btn.dataset.modal ? btn.dataset.modal : '#ctaModal';
+    const target = document.querySelector(selector);
+    if (target) openModal(target);
+  });
 });
 
-// Hero enhancements: smooth scroll, subtle parallax, stats counter
+// Close buttons for each modal
+document.querySelectorAll('.modal').forEach(modalEl => {
+  const closeBtn = modalEl.querySelector('.close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => closeModal(modalEl));
+  }
+});
+
+// click outside to close
+window.addEventListener('click', (e) => {
+  if (e.target && e.target.classList && e.target.classList.contains('modal')) {
+    closeModal(e.target);
+  }
+});
+
+/* ---------------------
+   Generic modal form handling
+   works for:
+    - #ctaForm  (existing contact form)
+    - #bookCallForm (new booking form)
+   Uses data-feedback inside each form OR falls back to #formFeedback for legacy.
+   --------------------- */
+document.querySelectorAll('.modal form').forEach(form => {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const modalEl = form.closest('.modal');
+    const feedback = form.querySelector('[data-feedback]') || document.getElementById('formFeedback') || null;
+
+    // show sending
+    if (feedback) {
+      feedback.textContent = 'Sending...';
+      feedback.style.color = getCSSVar('--color-primary');
+    }
+
+    // Simple validation (for book-call form: phone + datetime)
+    const phoneInput = form.querySelector('input[name="phone"]');
+    const dtInput = form.querySelector('input[name="datetime"], input[type="datetime-local"]');
+
+    if (phoneInput) {
+      const phoneVal = phoneInput.value.trim();
+      if (!phoneVal || phoneVal.length < 6) {
+        if (feedback) {
+          feedback.textContent = 'Please enter a valid phone number.';
+          feedback.style.color = getCSSVar('--color-red');
+        }
+        return;
+      }
+    }
+
+    if (dtInput) {
+      const dtVal = dtInput.value;
+      if (!dtVal) {
+        if (feedback) {
+          feedback.textContent = 'Please select a date & time.';
+          feedback.style.color = getCSSVar('--color-red');
+        }
+        return;
+      }
+      const selected = new Date(dtVal);
+      const now = new Date();
+      if (selected < now) {
+        if (feedback) {
+          feedback.textContent = 'Please choose a future date/time.';
+          feedback.style.color = getCSSVar('--color-red');
+        }
+        return;
+      }
+    }
+
+    // Simulate sending (demo) — reuse your previous behavior
+    setTimeout(() => {
+      const success = Math.random() > 0.15; // 85% success
+      if (success) {
+        if (feedback) {
+          // friendly success messages based on form
+          if (form.id === 'bookCallForm') {
+            feedback.textContent = 'Request saved! We will call you at the scheduled time.';
+          } else {
+            feedback.textContent = 'Message sent successfully!';
+          }
+          feedback.style.color = getCSSVar('--color-accent');
+        }
+        form.reset();
+        // close modal shortly after success
+        setTimeout(() => closeModal(modalEl), 1100);
+      } else {
+        if (feedback) {
+          feedback.textContent = 'Something went wrong. Try again.';
+          feedback.style.color = getCSSVar('--color-red');
+        }
+      }
+    }, 1000);
+  });
+});
+
+/* ---------------------
+   Preserve previous join button behavior but make it explicit
+   joinNow (if present) should open the contact modal (#ctaModal)
+   --------------------- */
+const joinBtn = document.getElementById('joinNow');
+if (joinBtn) {
+  joinBtn.addEventListener('click', () => {
+    const cta = document.getElementById('ctaModal');
+    if (cta) openModal(cta);
+  });
+}
+
+/* ---------------------
+   Hero enhancements (kept from your original file)
+   - smooth scroll
+   - parallax (optional)
+   - stats counter
+   --------------------- */
 (function () {
-  // smooth scrolling for hero scroll and viewPrograms
+  // smooth scrolling for hero scroll and viewPrograms and nav anchors
   document.querySelectorAll('.hero-scroll, #viewPrograms, .nav a[href^="#"]').forEach(el => {
     el.addEventListener('click', function (e) {
       const href = this.getAttribute('href') || this.dataset.target;
       if (!href || !href.startsWith('#')) return;
       e.preventDefault();
       const target = document.querySelector(href);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 
@@ -82,7 +195,6 @@ ctaForm.addEventListener('submit', (e) => {
   if (bg && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     window.addEventListener('scroll', () => {
       const y = Math.min(window.scrollY, 500);
-      // small translate and scale
       bg.style.transform = `translateY(${y * 0.03}px) scale(${1 + Math.min(y / 4000, 0.02)})`;
     }, { passive: true });
   }
@@ -109,13 +221,6 @@ ctaForm.addEventListener('submit', (e) => {
     }, { threshold: 0.4 });
     stats.forEach(s => io.observe(s));
   } else {
-    // fallback: set values
     stats.forEach(s => s.textContent = s.dataset.target || '0');
-  }
-
-  // Hook join button to modal if present (re-uses earlier modal code)
-  const joinBtn = document.getElementById('joinNow');
-  if (joinBtn && openModalBtns.length) {
-    joinBtn.addEventListener('click', () => openModalBtns[0].click());
   }
 })();
