@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iron Core - Project Standards & Coding Guidelines</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+      color: #222;
+    }
+    header {
+      background: #1f1f1f;
+      color: #fff;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      border-radius: 8px;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Montserrat', sans-serif;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.6rem; border-bottom: 2px solid #eee; padding-bottom: 0.3rem; }
+    h3 { font-size: 1.3rem; }
+    p {
+      margin: 0.5rem 0;
+    }
+    code, pre {
+      font-family: monospace;
+      background: #eee;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+    }
+    pre { padding: 1rem; overflow-x: auto; }
+    ul, ol { margin-left: 1.5rem; }
+    nav ul { list-style: none; padding: 0; }
+    nav ul li { display: inline-block; margin-right: 1rem; }
+    nav a { text-decoration: none; color: #1f1f1f; }
+    .section { margin-bottom: 2rem; }
+    .example { background: #f0f0f0; padding: 1rem; border-left: 4px solid #1f1f1f; margin: 1rem 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Iron Core - Project Standards & Coding Guidelines</h1>
+  </header>
+  <main>
+    <section class="section" id="principles">
+      <h2>Principles</h2>
+      <ul>
+        <li>Keep it simple, consistent, and discoverable. Prefer clarity over cleverness.</li>
+        <li>Prioritize semantic HTML and progressive enhancement. JS enhances interactions, not baseline functionality.</li>
+        <li>Accessibility, readability, and performance are first-class concerns. Follow WCAG principles.</li>
+        <li>Prefer widely-used conventions to reduce cognitive load.</li>
+      </ul>
+    </section>
+
+    <section class="section" id="repository-structure">
+      <h2>Repository Structure</h2>
+      <pre><code>
+iron-core/
+│
+├─ index.html
+├─ css/
+│   ├─ main.css
+│   ├─ variables.css
+│   └─ components.css
+├─ assets/
+│   ├─ images/
+│   └─ logos/
+└─ js/
+    └─ main.js
+      </code></pre>
+      <p><strong>Notes:</strong> one responsibility per file; variables.css only tokens, main.css for layout & components.</p>
+    </section>
+
+    <section class="section" id="html-standards">
+      <h2>HTML Standards</h2>
+      <ul>
+        <li>Use semantic tags: <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code>, headings hierarchically.</li>
+        <li>One <code>&lt;h1&gt;</code> per page; use <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code> for subheadings.</li>
+        <li>Every image must have <code>alt</code> attribute; decorative images <code>alt=""</code>.</li>
+        <li>Use <code>&lt;a&gt;</code> for navigation and <code>&lt;button&gt;</code> for actions.</li>
+        <li>Forms must have <code>&lt;label&gt;</code> or <code>aria-label</code> and validation.</li>
+        <li>Use ARIA only when necessary, e.g., modals: <code>aria-hidden</code>, <code>aria-modal="true"</code>.</li>
+      </ul>
+    </section>
+
+    <section class="section" id="css-standards">
+      <h2>CSS Standards</h2>
+      <ul>
+        <li>Keep CSS atomic and component-scoped; utility classes sparingly.</li>
+        <li>Use variables.css for tokens; refer consistently: <code>var(--color-primary)</code>.</li>
+        <li>BEM-like naming: <code>.component</code>, <code>.component__element</code>, <code>.component--modifier</code>.</li>
+        <li>Mobile-first, min-width media queries; use <code>clamp()</code> for fluid typography.</li>
+        <li>Use Grid for layout, Flexbox for components; avoid layout margins.</li>
+        <li>Respect <code>prefers-reduced-motion</code> and visible focus styles.</li>
+      </ul>
+    </section>
+
+    <section class="section" id="js-standards">
+      <h2>JavaScript Standards</h2>
+      <ul>
+        <li>ES6+: <code>const</code>/<code>let</code>, arrow functions, modules.</li>
+        <li>Follow consistent style (Airbnb recommended), <code>const</code> by default.</li>
+        <li>Use async/await; try/catch for async code.</li>
+        <li>Event delegation for lists/grids; batch DOM updates.</li>
+        <li>Debounce/throttle high-frequency events; sanitize <code>innerHTML</code>.</li>
+        <li>Wrap code in modules or namespaces; avoid globals.</li>
+        <li>Feature detection & progressive enhancement.</li>
+        <li>Trap focus in modals; provide keyboard handlers for interactive elements.</li>
+      </ul>
+    </section>
+
+    <section class="section" id="accessibility">
+      <h2>Accessibility (A11y)</h2>
+      <ul>
+        <li>WCAG 2.1 AA compliance.</li>
+        <li>Keyboard support for all interactive elements.</li>
+        <li>Color contrast and skip-links.</li>
+        <li>Descriptive labels and inline error messaging in forms.</li>
+      </ul>
+    </section>
+
+    <section class="section" id="performance-assets">
+      <h2>Performance & Assets</h2>
+      <ul>
+        <li>Optimized images (AVIF/WebP), lazy-load images/videos.</li>
+        <li>Minify CSS/JS, caching, hashed filenames.</li>
+        <li>Limit fonts; prefer system fonts.</li>
+      </ul>
+    </section>
+
+    <section class="section" id="security-privacy">
+      <h2>Security & Privacy</h2>
+      <ul>
+        <li>No secrets in client-side code.</li>
+        <li>Sanitize and validate inputs server-side.</li>
+        <li>Apply basic CSP headers; keep libraries updated.</li>
+      </ul>
+    </section>
+
+    <section class="section" id="examples">
+      <h2>Example Snippets</h2>
+      <div class="example">
+        <h3>Semantic Modal</h3>
+        <pre><code>&lt;div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true"&gt;
+  &lt;div class="modal-content"&gt;
+    &lt;h2 id="modalTitle"&gt;Contact&lt;/h2&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+        </code></pre>
+      </div>
+      <div class="example">
+        <h3>BEM Example</h3>
+        <pre><code>&lt;div class="pricing-card pricing-card--elite"&gt;
+  &lt;h3 class="pricing-card__title"&gt;Elite&lt;/h3&gt;
+  &lt;p class="pricing-card__price"&gt;₹5,999 / month&lt;/p&gt;
+&lt;/div&gt;
+        </code></pre>
+      </div>
+      <div class="example">
+        <h3>JS Module Pattern (ESM)</h3>
+        <pre><code>export function openModal(modalEl) {
+  modalEl.setAttribute('aria-hidden', 'false');
+}
+export function closeModal(modalEl) {
+  modalEl.setAttribute('aria-hidden', 'true');
+}</code></pre>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
