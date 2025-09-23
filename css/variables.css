@@ -1,13 +1,12 @@
-/* variables.css */
 :root {
   /* Colors */
-  --color-primary: #007bff;
-  --color-accent: #32cd32;
-  --color-red: #ff3b30;
-  --color-white: #ffffff;
-  --color-light: #f2f2f2;
-  --color-dark: #1c1c1c;
-  --color-black: #000000;
+  --color-primary: #ff6f00;       /* Deep Orange for headings & primary accents */
+  --color-accent: #ffa500;        /* Bright Orange for highlights & hover effects */
+  --color-red: #ff3b30;           /* Red for errors or warnings */
+  --color-white: #ffffff;          /* White for text on dark backgrounds */
+  --color-light: #f2f2f2;          /* Light grey for secondary text */
+  --color-dark: #1a1a1a;           /* Dark background for sections */
+  --color-black: #000000;          /* Pure black if needed */
 
   /* Typography */
   --font-heading: "Montserrat", sans-serif;

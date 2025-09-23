@@ -11,7 +11,6 @@
     />
     <link rel="stylesheet" href="css/variables.css" />
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/components.css" />
   </head>
   <body>
     <!-- HEADER -->
@@ -46,33 +45,82 @@
     </header>
 
     <!-- HERO SECTION -->
-    <section id="hero" class="hero">
-      <div class="hero-overlay"></div>
-      <div class="container hero-container">
-        <div class="hero-text">
-          <h1>Strength. Discipline. Results.</h1>
-          <p>
-            Push beyond limits — structured coaching, elite equipment, and a
-            community that refuses excuses.
+    <section id="hero" class="hero-heroes" aria-label="Iron Core hero section">
+      <div class="hero-bg" role="img" aria-hidden="true"></div>
+
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <div class="eyebrow">Hustle for Health</div>
+
+          <h1 class="hero-heading">
+            Strength.
+            <span class="hero-highlight">Discipline.</span>
+            Results.
+          </h1>
+
+          <p class="hero-sub">
+            Push beyond limits — structured coaching, elite equipment and a
+            community that refuses excuses. Build strength. Build resilience.
           </p>
-          <div class="hero-cta">
-            <button class="btn btn-primary">Join Now</button>
-            <button class="btn btn-secondary">View Programs</button>
+
+          <div class="hero-ctas">
+            <button class="btn btn-cta-primary" id="joinNow">Join Now</button>
+            <button class="btn btn-cta-secondary" id="viewPrograms">
+              View Programs
+            </button>
+          </div>
+
+          <ul class="hero-stats" aria-hidden="false">
+            <li>
+              <strong class="stat-number" data-target="1200">0</strong
+              ><span>Members</span>
+            </li>
+            <li>
+              <strong class="stat-number" data-target="10">0</strong
+              ><span>Trainers</span>
+            </li>
+            <li>
+              <strong class="stat-number" data-target="95">0</strong
+              ><span>% Success</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="hero-right" aria-hidden="false">
+          <div
+            class="hero-image"
+            role="img"
+            aria-label="Athlete training in gym"
+          >
+            <!-- use background image in CSS; keep <img> as fallback if you prefer -->
+            <img src="assets/images/hero-portrait.png" alt="Athlete training" />
           </div>
         </div>
       </div>
+
+      <a class="hero-scroll" href="#about" aria-label="Scroll to about section">
+        <span class="chev">⌄</span>
+        <span class="sr-only">Scroll to next section</span>
+      </a>
     </section>
 
     <!-- ABOUT SECTION -->
     <section id="about" class="about">
-      <div class="container">
+      <div class="video-bg-container">
+        <video autoplay muted loop playsinline class="about-video">
+          <source src="assets/videos/about.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+      </div>
+
+      <div class="container about-content">
         <h2>About Iron Core</h2>
-        <p>
-          Iron Core exists to help individuals push beyond their limits. We
-          believe that strength isn’t just physical — it’s mental, emotional,
-          and disciplined. Every program, every session, every rep is designed
-          to challenge you, transform you, and help you achieve measurable
-          results.
+        <p class="about-intro">
+          Iron Core exists to help individuals push beyond their limits.
+          Strength isn’t just physical — it’s mental, emotional, and
+          disciplined. Every session, every rep, every challenge is crafted to
+          help you grow stronger, more confident, and unstoppable.
         </p>
 
         <div class="about-grid">
@@ -86,27 +134,27 @@
           <div class="about-card">
             <h3>State-of-the-Art Equipment</h3>
             <p>
-              Our gym is equipped with premium machinery and free weights to
-              ensure you can train like a professional athlete.
+              Premium machinery and free weights designed to help you train like
+              a professional athlete.
             </p>
           </div>
           <div class="about-card">
             <h3>Expert Coaches</h3>
             <p>
-              Our trainers are certified professionals, dedicated to guiding you
-              safely and effectively through your fitness journey.
+              Certified trainers guide you safely and effectively, every step of
+              the way.
             </p>
           </div>
           <div class="about-card">
             <h3>Community & Support</h3>
             <p>
-              Join a community that motivates, encourages, and never accepts
-              excuses. You won’t just train here — you’ll belong.
+              Join a community that motivates, encourages, and celebrates your
+              progress.
             </p>
           </div>
         </div>
 
-        <div class="about-cta" style="text-align: center; margin-top: 30px">
+        <div class="about-cta">
           <button class="btn btn-accent" id="openModal">
             Start Your Transformation
           </button>
@@ -304,20 +352,29 @@
       <div class="container">
         <h2>Meet Our Trainers</h2>
         <div class="trainer-grid">
+          <!-- Trainer Card Template -->
           <div class="trainer-card">
-            <img src="assets/images/trainer1.jpg" alt="Trainer Name" />
+            <img src="assets/images/trainer-1.jpg" alt="Trainer John Doe" />
             <h3>John Doe</h3>
             <p>Strength Coach</p>
           </div>
+
           <div class="trainer-card">
-            <img src="assets/images/trainer2.jpg" alt="Trainer Name" />
+            <img src="assets/images/trainer-2.jpg" alt="Trainer Jane Smith" />
             <h3>Jane Smith</h3>
             <p>Nutritionist</p>
           </div>
+
           <div class="trainer-card">
-            <img src="assets/images/trainer3.jpg" alt="Trainer Name" />
+            <img src="assets/images/trainer-3.jpg" alt="Trainer Mike Johnson" />
             <h3>Mike Johnson</h3>
             <p>Mobility Specialist</p>
+          </div>
+
+          <div class="trainer-card">
+            <img src="assets/images/trainer-4.jpg" alt="Trainer Sarah Lee" />
+            <h3>Sarah Lee</h3>
+            <p>Functional Training</p>
           </div>
         </div>
       </div>
@@ -326,19 +383,88 @@
     <!-- TESTIMONIALS SECTION -->
     <section id="testimonials" class="testimonials">
       <div class="container">
-        <h2>Testimonials</h2>
+        <h2>What Our Members Say</h2>
         <div class="testimonial-grid">
           <div class="testimonial-card">
-            <p>
-              "One month in — my lifts went up, and I finally feel disciplined."
-              — R.
+            <p class="quote">
+              "Iron Core pushed me to achieve goals I never thought possible."
             </p>
+            <div class="author">
+              <img src="https://i.pravatar.cc/150?img=11" alt="Sarah K." />
+              <div>
+                <h4>Sarah K.</h4>
+                <span>Entrepreneur</span>
+              </div>
+            </div>
           </div>
+
           <div class="testimonial-card">
-            <p>
-              "Iron Core pushed me to achieve goals I never thought possible." —
-              S.
+            <p class="quote">
+              "One month in — my lifts went up, and I finally feel disciplined."
             </p>
+            <div class="author">
+              <img src="https://i.pravatar.cc/150?img=32" alt="Ryan L." />
+              <div>
+                <h4>Ryan L.</h4>
+                <span>Software Engineer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <p class="quote">
+              "The trainers here genuinely care. My strength and confidence
+              skyrocketed in just 3 months."
+            </p>
+            <div class="author">
+              <img src="https://i.pravatar.cc/150?img=47" alt="Melissa D." />
+              <div>
+                <h4>Melissa D.</h4>
+                <span>College Student</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <p class="quote">
+              "The community support is incredible. It keeps me coming back
+              every day."
+            </p>
+            <div class="author">
+              <img src="https://i.pravatar.cc/150?img=55" alt="James P." />
+              <div>
+                <h4>James P.</h4>
+                <span>Accountant</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <p class="quote">
+              "Best decision I’ve made for my health. The progress is real and
+              measurable."
+            </p>
+            <div class="author">
+              <img src="https://i.pravatar.cc/150?img=61" alt="Priya S." />
+              <div>
+                <h4>Priya S.</h4>
+                <span>Marketing Manager</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <p class="quote">
+              "Friendly trainers, motivating environment, and top-class
+              equipment."
+            </p>
+            <div class="author">
+              <img src="https://i.pravatar.cc/150?img=50" alt="Daniel H." />
+              <div>
+                <h4>Daniel H.</h4>
+                <span>Consultant</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
