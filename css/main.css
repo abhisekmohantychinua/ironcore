@@ -1271,3 +1271,52 @@ textarea:focus {
   font-size: 0.95rem;
   color: var(--color-light);
 }
+
+.custom-toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--color-dark);
+  color: var(--color-white);
+  padding: 14px 18px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 320px;
+  font-size: 0.95rem;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 2000;
+  font-family: var(--font-body);
+}
+
+.custom-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.custom-toast .toast-message {
+  flex: 1;
+  line-height: 1.4;
+}
+
+.custom-toast .toast-cta {
+  font-size: 0.85rem;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.custom-toast .close-btn {
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--color-light);
+  transition: color 0.3s;
+}
+
+.custom-toast .close-btn:hover {
+  color: var(--color-accent);
+}

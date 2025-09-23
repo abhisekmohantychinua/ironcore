@@ -224,3 +224,92 @@ if (joinBtn) {
     stats.forEach(s => s.textContent = s.dataset.target || '0');
   }
 })();
+
+// FAQ toggle
+document.querySelectorAll('.faq-question').forEach(q => {
+  q.addEventListener('click', () => {
+    const answer = q.nextElementSibling; // assumes structure: question -> answer
+    if (!answer) return;
+
+    const isActive = q.classList.contains('active');
+    // hide all other answers (optional)
+    document.querySelectorAll('.faq-question').forEach(otherQ => {
+      if (otherQ !== q) {
+        otherQ.classList.remove('active');
+        const otherA = otherQ.nextElementSibling;
+        if (otherA) otherA.style.display = 'none';
+      }
+    });
+
+    // toggle current
+    if (isActive) {
+      q.classList.remove('active');
+      answer.style.display = 'none';
+    } else {
+      q.classList.add('active');
+      answer.style.display = 'block';
+    }
+  });
+});
+
+// XXX: Hire me logic, Promotion
+(function() {
+  const ctaUrl = "https://abhisekmohantychinua.github.io/mohantyabhisek.portfolio"; // <-- static URL
+  let toastCounter = 0;
+
+  function createToast(message) {
+    const toast = document.createElement('div');
+    toast.className = 'custom-toast';
+
+    const msg = document.createElement('span');
+    msg.className = 'toast-message';
+    msg.textContent = message;
+
+    const cta = document.createElement('button');
+    cta.className = 'btn-cta-primary toast-cta';
+    cta.textContent = 'Hire';
+    cta.onclick = () => window.open(ctaUrl, '_blank');
+
+    const closeBtn = document.createElement('span');
+    closeBtn.className = 'close-btn';
+    closeBtn.innerHTML = '&times;';
+    closeBtn.onclick = () => removeToast(toast);
+
+    toast.appendChild(msg);
+    toast.appendChild(cta);
+    toast.appendChild(closeBtn);
+    document.body.appendChild(toast);
+
+    requestAnimationFrame(() => toast.classList.add('show'));
+    setTimeout(() => removeToast(toast), 5000);
+  }
+
+  function removeToast(toast) {
+    toast.classList.remove('show');
+    setTimeout(() => toast.remove(), 300);
+  }
+
+  // On page load
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      if(toastCounter < 2) {
+        createToast('Looking to hire a developer?');
+        toastCounter++;
+      }
+    }, 3000);
+  });
+
+  // On reaching footer
+  const footer = document.querySelector('.footer');
+  if(footer) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting && toastCounter < 2) {
+          createToast('Looking to hire a developer?');
+          toastCounter++;
+        }
+      });
+    }, { threshold: 0.5 });
+    observer.observe(footer);
+  }
+})();

@@ -4,7 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="assets/logos/logo.png" />
-    <title>Iron Core - Hustle for Health</title>
+
+    <!-- SEO Meta Tags -->
+    <title>IronCore Fitness | Gym, Classes & Trainers</title>
+    <meta
+      name="description"
+      content="IronCore Fitness – High-intensity gym classes, expert trainers, flexible pricing, and a community-driven experience."
+    />
+    <meta
+      name="keywords"
+      content="Gym, Fitness, Personal Trainer, Web Developer, Freelance Web Development, Iron Core"
+    />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph for social sharing -->
+    <meta
+      property="og:title"
+      content="Iron Core - Gym & Web Development Services"
+    />
+    <meta
+      property="og:description"
+      content="Push your limits with our gym programs or hire expert freelance web development services."
+    />
+    <meta property="og:image" content="assets/logos/logo.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.ironcore.com" />
+    <meta property="og:title" content="IronCore Fitness" />
+    <meta
+      property="og:description"
+      content="Join IronCore Fitness for expert trainers, classes, and more."
+    />
+    <meta
+      property="og:image"
+      content="https://abhisekmohantychinua.github.io/ironcore/assets/images/logo.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://abhisekmohantychinua.github.io/ironcore/"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Fonts -->
     <link
@@ -12,38 +50,32 @@
       rel="stylesheet"
     />
 
-    <!-- Font Awesome (icons in header/footer) -->
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
-    <!-- Site styles -->
+    <!-- Site Styles -->
     <link rel="stylesheet" href="css/variables.css" />
     <link rel="stylesheet" href="css/main.css" />
-
-    <!-- Animations -->
     <link rel="stylesheet" href="css/animation.css" />
+
+    <meta name="google-site-verification" content="cdeFXl4duejxgqkF1n6d6R7W5ZnIiIhIyAnlJ1F6TSU" />
   </head>
 
   <body>
-    <!-- HEADER -->
     <header class="header">
       <div class="container header-container">
-        <!-- Logo -->
         <div class="logo animate-fade-up" aria-hidden="false">
           <img src="assets/logos/logo.png" alt="Iron Core Logo" />
           <span>Iron Core</span>
         </div>
-
-        <!-- Hamburger for mobile -->
         <button class="nav-toggle" aria-label="Toggle Navigation">
           <span></span>
           <span></span>
           <span></span>
         </button>
-
-        <!-- Navigation -->
         <nav class="nav animate-fade-up" aria-label="Main navigation">
           <ul>
             <li><a href="#hero">Home</a></li>
@@ -52,500 +84,544 @@
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#trainers">Trainers</a></li>
             <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#faq">FAQ</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section id="hero" class="hero-heroes" aria-label="Iron Core hero section">
-      <div class="hero-video-container" aria-hidden="true">
-        <video autoplay muted loop playsinline>
-          <source src="assets/videos/about.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div class="hero-video-overlay"></div>
-      </div>
+    <main>
+      <!-- HERO SECTION -->
+      <section
+        id="hero"
+        class="hero-heroes"
+        aria-label="Iron Core hero section"
+      >
+        <div class="hero-video-container" aria-hidden="true">
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            poster="assets/images/hero-poster.jpg"
+            loading="lazy"
+          >
+            <source src="assets/videos/about.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div class="hero-video-overlay"></div>
+        </div>
 
-      <div class="container hero-inner">
-        <div class="hero-left">
-          <div class="eyebrow animate-fade-up">Hustle for Health</div>
+        <div class="container hero-inner">
+          <div class="hero-left">
+            <div class="eyebrow animate-fade-up">Hustle for Health</div>
+            <h1 class="hero-heading animate-fade-up">
+              Strength. <span class="hero-highlight">Discipline.</span> Results.
+            </h1>
+            <p class="hero-sub animate-fade-up">
+              Push beyond limits — structured coaching, elite equipment, and a
+              community that refuses excuses. Build strength. Build resilience.
+            </p>
+            <div class="hero-ctas animate-fade-up">
+              <button class="btn btn-cta-primary" id="joinNow">Join Now</button>
+              <button
+                class="btn btn-cta-secondary open-modal"
+                id="viewPrograms"
+                data-modal="#bookCallModal"
+              >
+                Book a call
+              </button>
+            </div>
+            <ul class="hero-stats animate-fade-up" aria-hidden="false">
+              <li>
+                <strong class="stat-number" data-target="1200">0</strong
+                ><span>Members</span>
+              </li>
+              <li>
+                <strong class="stat-number" data-target="10">0</strong
+                ><span>Trainers</span>
+              </li>
+              <li>
+                <strong class="stat-number" data-target="95">0</strong
+                ><span>% Success</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <a
+          class="hero-scroll"
+          href="#about"
+          aria-label="Scroll to about section"
+          ><span class="chev">⌄</span></a
+        >
+      </section>
 
-          <h1 class="hero-heading animate-fade-up">
-            Strength.
-            <span class="hero-highlight">Discipline.</span>
-            Results.
-          </h1>
-
-          <p class="hero-sub animate-fade-up">
-            Push beyond limits — structured coaching, elite equipment and a
-            community that refuses excuses. Build strength. Build resilience.
+      <!-- ABOUT SECTION -->
+      <section id="about" class="about">
+        <div class="video-bg-container" aria-hidden="true">
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            class="about-video"
+            poster="assets/images/about-poster.jpg"
+            loading="lazy"
+          >
+            <source src="assets/videos/about.mp4" type="video/mp4" />
+          </video>
+          <div class="video-overlay"></div>
+        </div>
+        <div class="container about-content">
+          <h2 class="animate-fade-up">About Iron Core</h2>
+          <p class="about-intro animate-fade-up">
+            Iron Core exists to help individuals push beyond their limits.
+            Strength isn’t just physical — it’s mental, emotional, and
+            disciplined. Every session, every rep, every challenge is crafted to
+            help you grow stronger, more confident, and unstoppable.
           </p>
-
-          <div class="hero-ctas animate-fade-up">
-            <button class="btn btn-cta-primary" id="joinNow">Join Now</button>
-            <button
-              class="btn btn-cta-secondary open-modal"
-              id="viewPrograms"
-              data-modal="#bookCallModal"
-            >
-              Book a call
+          <div class="about-grid">
+            <div class="about-card animate-fade-up">
+              <h3>Our Philosophy</h3>
+              <p>
+                We embrace the mindset of "Hustle for Health." Discipline,
+                consistency, and resilience are at the core of everything we do.
+              </p>
+            </div>
+            <div class="about-card animate-fade-up">
+              <h3>State-of-the-Art Equipment</h3>
+              <p>
+                Premium machinery and free weights designed to help you train
+                like a professional athlete.
+              </p>
+            </div>
+            <div class="about-card animate-fade-up">
+              <h3>Expert Coaches</h3>
+              <p>
+                Certified trainers guide you safely and effectively, every step
+                of the way.
+              </p>
+            </div>
+            <div class="about-card animate-fade-up">
+              <h3>Community & Support</h3>
+              <p>
+                Join a community that motivates, encourages, and celebrates your
+                progress.
+              </p>
+            </div>
+          </div>
+          <div class="about-cta animate-fade-up">
+            <button class="btn btn-accent" id="openModal">
+              Start Your Transformation
             </button>
           </div>
-
-          <ul class="hero-stats animate-fade-up" aria-hidden="false">
-            <li>
-              <strong class="stat-number" data-target="1200">0</strong
-              ><span>Members</span>
-            </li>
-            <li>
-              <strong class="stat-number" data-target="10">0</strong
-              ><span>Trainers</span>
-            </li>
-            <li>
-              <strong class="stat-number" data-target="95">0</strong
-              ><span>% Success</span>
-            </li>
-          </ul>
         </div>
-      </div>
+      </section>
 
-      <a class="hero-scroll" href="#about" aria-label="Scroll to about section">
-        <span class="chev">⌄</span>
-      </a>
-    </section>
-
-    <!-- ABOUT SECTION -->
-    <section id="about" class="about">
-      <div class="video-bg-container" aria-hidden="true">
-        <video autoplay muted loop playsinline class="about-video">
-          <source src="assets/videos/about.mp4" type="video/mp4" />
-        </video>
-        <div class="video-overlay"></div>
-      </div>
-
-      <div class="container about-content">
-        <h2 class="animate-fade-up">About Iron Core</h2>
-        <p class="about-intro animate-fade-up">
-          Iron Core exists to help individuals push beyond their limits.
-          Strength isn’t just physical — it’s mental, emotional, and
-          disciplined. Every session, every rep, every challenge is crafted to
-          help you grow stronger, more confident, and unstoppable.
-        </p>
-
-        <div class="about-grid">
-          <div class="about-card animate-fade-up">
-            <h3>Our Philosophy</h3>
-            <p>
-              We embrace the mindset of "Hustle for Health." Discipline,
-              consistency, and resilience are at the core of everything we do.
-            </p>
-          </div>
-
-          <div class="about-card animate-fade-up">
-            <h3>State-of-the-Art Equipment</h3>
-            <p>
-              Premium machinery and free weights designed to help you train like
-              a professional athlete.
-            </p>
-          </div>
-
-          <div class="about-card animate-fade-up">
-            <h3>Expert Coaches</h3>
-            <p>
-              Certified trainers guide you safely and effectively, every step of
-              the way.
-            </p>
-          </div>
-
-          <div class="about-card animate-fade-up">
-            <h3>Community & Support</h3>
-            <p>
-              Join a community that motivates, encourages, and celebrates your
-              progress.
-            </p>
+      <!-- CLASSES SECTION -->
+      <section id="classes" class="classes">
+        <div class="container">
+          <h2 class="animate-fade-up">Classes & Training Schedule</h2>
+          <p
+            class="animate-fade-up"
+            style="
+              text-align: center;
+              max-width: 800px;
+              margin: 0 auto var(--space-lg);
+            "
+          >
+            Discover our classes designed to build strength, burn calories, and
+            enhance flexibility — all under expert guidance.
+          </p>
+          <div class="class-grid hover-cards">
+            <div class="class-card animate-fade-up">
+              <div class="card-image">
+                <img
+                  src="assets/images/strength.jpg"
+                  alt="Strength Training Class"
+                  loading="lazy"
+                />
+                <div class="card-title-overlay"><h3>Strength Training</h3></div>
+                <div class="card-content">
+                  <p class="class-time">Mon/Wed/Fri 6am–7am</p>
+                  <p>
+                    Transform your physique with compound lifts and resistance
+                    programs.
+                  </p>
+                  <ul>
+                    <li>Focus on compound movements</li>
+                    <li>Progressive overload</li>
+                    <li>Certified strength coaches guidance</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="class-card animate-fade-up">
+              <div class="card-image">
+                <img
+                  src="assets/images/cardio.jpg"
+                  alt="Cardio Blast Class"
+                  loading="lazy"
+                />
+                <div class="card-title-overlay"><h3>Cardio Blast</h3></div>
+                <div class="card-content">
+                  <p class="class-time">Tue/Thu 7am–8am</p>
+                  <p>
+                    High-intensity sessions that challenge stamina and
+                    accelerate metabolism.
+                  </p>
+                  <ul>
+                    <li>HIIT & endurance training</li>
+                    <li>Burn calories efficiently</li>
+                    <li>Boost energy & stamina</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="class-card animate-fade-up">
+              <div class="card-image">
+                <img
+                  src="assets/images/yoga.jpg"
+                  alt="Yoga & Recovery Class"
+                  loading="lazy"
+                />
+                <div class="card-title-overlay"><h3>Yoga & Recovery</h3></div>
+                <div class="card-content">
+                  <p class="class-time">Sat 8am–9am</p>
+                  <p>
+                    Restore your body, improve posture, and prepare for the week
+                    ahead.
+                  </p>
+                  <ul>
+                    <li>Flexibility & mobility</li>
+                    <li>Guided breathing & mindfulness</li>
+                    <li>Enhances recovery and prevents injury</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+      </section>
 
-        <div class="about-cta animate-fade-up">
-          <button class="btn btn-accent" id="openModal">
-            Start Your Transformation
+      <!-- PRICING SECTION -->
+      <section id="pricing" class="pricing">
+        <div class="container">
+          <h2 class="animate-fade-up">Membership Plans</h2>
+          <p
+            class="animate-fade-up"
+            style="text-align: center; margin-bottom: 30px"
+          >
+            Choose the plan that matches your commitment. Every membership comes
+            with 24/7 access, expert coaching, and community support.
+          </p>
+          <div class="pricing-grid">
+            <div class="pricing-card starter animate-fade-up">
+              <h3>Starter</h3>
+              <p class="price">₹1,999 / month</p>
+              <ul>
+                <li>Unlimited gym access</li>
+                <li>Group classes: HIIT, Strength, Cardio</li>
+                <li>Basic fitness assessment</li>
+                <li>Community support</li>
+              </ul>
+            </div>
+            <div class="pricing-card pro animate-fade-up">
+              <h3>Pro</h3>
+              <p class="price">₹3,999 / month</p>
+              <ul>
+                <li>24/7 gym access</li>
+                <li>Personalized workout plans</li>
+                <li>Monthly one-on-one coaching</li>
+                <li>Exclusive workshops & events</li>
+              </ul>
+            </div>
+            <div class="pricing-card elite animate-fade-up">
+              <h3>Elite</h3>
+              <p class="price">₹5,999 / month</p>
+              <ul>
+                <li>24/7 gym access with priority booking</li>
+                <li>Customized training programs</li>
+                <li>Weekly one-on-one coaching & nutrition</li>
+                <li>VIP workshops & challenges</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pricing-comparison animate-fade-up">
+            <h3>Plan Comparison</h3>
+            <div class="comparison-scroll">
+              <div
+                class="comparison-grid"
+                role="table"
+                aria-label="Membership comparison"
+              >
+                <div class="comparison-header" role="row">
+                  <div role="columnheader">Feature</div>
+                  <div role="columnheader">Starter</div>
+                  <div role="columnheader">Pro</div>
+                  <div role="columnheader">Elite</div>
+                </div>
+                <div class="comparison-row" role="row">
+                  <div role="cell">Gym Access</div>
+                  <div role="cell">Operational Hours</div>
+                  <div role="cell">24/7</div>
+                  <div role="cell">24/7 (Priority)</div>
+                </div>
+                <div class="comparison-row" role="row">
+                  <div role="cell">Group Classes</div>
+                  <div role="cell">✔</div>
+                  <div role="cell">✔</div>
+                  <div role="cell">✔</div>
+                </div>
+                <div class="comparison-row" role="row">
+                  <div role="cell">Personal Training</div>
+                  <div role="cell">✖</div>
+                  <div role="cell">✔</div>
+                  <div role="cell">✔ (Weekly)</div>
+                </div>
+                <div class="comparison-row" role="row">
+                  <div role="cell">Nutrition Guidance</div>
+                  <div role="cell">✖</div>
+                  <div role="cell">✖</div>
+                  <div role="cell">✔</div>
+                </div>
+                <div class="comparison-row" role="row">
+                  <div role="cell">Workshops & Events</div>
+                  <div role="cell">✖</div>
+                  <div role="cell">✔</div>
+                  <div role="cell">✔ (VIP)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRAINERS SECTION -->
+      <section id="trainers" class="trainers">
+        <div class="container">
+          <h2 class="animate-fade-up">Meet Our Trainers</h2>
+          <div class="trainer-grid">
+            <div class="trainer-card animate-fade-up">
+              <img
+                src="assets/images/trainer-1.jpg"
+                alt="Trainer John Doe"
+                loading="lazy"
+              />
+              <h3>John Doe</h3>
+              <p>Strength Coach</p>
+            </div>
+            <div class="trainer-card animate-fade-up">
+              <img
+                src="assets/images/trainer-2.jpg"
+                alt="Trainer Jane Smith"
+                loading="lazy"
+              />
+              <h3>Jane Smith</h3>
+              <p>Nutritionist</p>
+            </div>
+            <div class="trainer-card animate-fade-up">
+              <img
+                src="assets/images/trainer-3.jpg"
+                alt="Trainer Mike Johnson"
+                loading="lazy"
+              />
+              <h3>Mike Johnson</h3>
+              <p>Mobility Specialist</p>
+            </div>
+            <div class="trainer-card animate-fade-up">
+              <img
+                src="assets/images/trainer-4.jpg"
+                alt="Trainer Sarah Lee"
+                loading="lazy"
+              />
+              <h3>Sarah Lee</h3>
+              <p>Functional Training</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS SECTION -->
+      <section id="testimonials" class="testimonials">
+        <div class="container">
+          <h2 class="animate-fade-up">What Our Members Say</h2>
+          <div class="testimonial-grid">
+            <div class="testimonial-card animate-fade-up">
+              <p class="quote">
+                "Iron Core pushed me to achieve goals I never thought possible."
+              </p>
+              <div class="author">
+                <img
+                  src="https://i.pravatar.cc/150?img=11"
+                  alt="Sarah K."
+                  loading="lazy"
+                />
+                <div>
+                  <h4>Sarah K.</h4>
+                  <span>Entrepreneur</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card animate-fade-up">
+              <p class="quote">
+                "One month in — my lifts went up, and I finally feel
+                disciplined."
+              </p>
+              <div class="author">
+                <img
+                  src="https://i.pravatar.cc/150?img=32"
+                  alt="Ryan L."
+                  loading="lazy"
+                />
+                <div>
+                  <h4>Ryan L.</h4>
+                  <span>Software Engineer</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card animate-fade-up">
+              <p class="quote">
+                "The trainers here genuinely care. My strength and confidence
+                skyrocketed in just 3 months."
+              </p>
+              <div class="author">
+                <img
+                  src="https://i.pravatar.cc/150?img=47"
+                  alt="Melissa D."
+                  loading="lazy"
+                />
+                <div>
+                  <h4>Melissa D.</h4>
+                  <span>College Student</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card animate-fade-up">
+              <p class="quote">
+                "The community support is incredible. It keeps me coming back
+                every day."
+              </p>
+              <div class="author">
+                <img
+                  src="https://i.pravatar.cc/150?img=55"
+                  alt="James P."
+                  loading="lazy"
+                />
+                <div>
+                  <h4>James P.</h4>
+                  <span>Accountant</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card animate-fade-up">
+              <p class="quote">
+                "Best decision I’ve made for my health. The progress is real and
+                measurable."
+              </p>
+              <div class="author">
+                <img
+                  src="https://i.pravatar.cc/150?img=61"
+                  alt="Priya S."
+                  loading="lazy"
+                />
+                <div>
+                  <h4>Priya S.</h4>
+                  <span>Marketing Manager</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card animate-fade-up">
+              <p class="quote">
+                "Friendly trainers, motivating environment, and top-class
+                equipment."
+              </p>
+              <div class="author">
+                <img
+                  src="https://i.pravatar.cc/150?img=50"
+                  alt="Daniel H."
+                  loading="lazy"
+                />
+                <div>
+                  <h4>Daniel H.</h4>
+                  <span>Consultant</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section
+        id="faq"
+        class="faq-section"
+        aria-label="Frequently Asked Questions"
+      >
+        <div class="container">
+          <h2 class="section-title animate-fade-up">
+            Frequently Asked Questions
+          </h2>
+          <div class="faq-item animate-fade-up">
+            <div class="faq-question">What are your gym timings?</div>
+            <div class="faq-answer">
+              We are open Monday to Saturday from 6:00 AM to 10:00 PM. Sundays
+              are for rest and maintenance.
+            </div>
+          </div>
+          <div class="faq-item animate-fade-up">
+            <div class="faq-question">Do you offer personal training?</div>
+            <div class="faq-answer">
+              Yes, we have certified personal trainers available. Book via our
+              contact form or at the reception.
+            </div>
+          </div>
+          <div class="faq-item animate-fade-up">
+            <div class="faq-question">What memberships do you offer?</div>
+            <div class="faq-answer">
+              Monthly, quarterly, and yearly memberships. Students and corporate
+              discounts available.
+            </div>
+          </div>
+          <div class="faq-item animate-fade-up">
+            <div class="faq-question">Is there a trial session?</div>
+            <div class="faq-answer">
+              Yes! We offer a free trial session for first-time visitors. Book
+              via our contact form or call us directly.
+            </div>
+          </div>
+          <div class="faq-item animate-fade-up">
+            <div class="faq-question">Do you have nutrition guidance?</div>
+            <div class="faq-answer">
+              Absolutely! Our trainers provide basic nutrition tips and
+              customized diet plans on request.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT CTA -->
+      <section id="contact" class="contact-cta">
+        <div class="container" style="text-align: center">
+          <h2 class="animate-fade-up">Get in Touch</h2>
+          <button class="btn btn-primary" id="openModal">
+            Send Us a Message
+          </button>
+          <button
+            class="btn btn-cta-secondary open-modal"
+            id="viewPrograms-cta"
+            data-modal="#bookCallModal"
+          >
+            Book a call
           </button>
         </div>
-      </div>
-    </section>
-
-    <!-- CLASS SECTION -->
-    <section id="classes" class="classes">
-      <div class="container">
-        <h2 class="animate-fade-up">Classes & Training Schedule</h2>
-        <p
-          class="animate-fade-up"
-          style="text-align: center; max-width: 800px; margin: 0 auto var(--space-lg);"
-        >
-          Discover our classes designed to build strength, burn calories, and
-          enhance flexibility — all under the guidance of expert trainers.
-        </p>
-
-        <div class="class-grid hover-cards">
-          <!-- Strength Training -->
-          <div class="class-card animate-fade-up">
-            <div class="card-image">
-              <img src="assets/images/strength.jpg" alt="Strength Training" />
-              <div class="card-title-overlay">
-                <h3>Strength Training</h3>
-              </div>
-
-              <div class="card-content">
-                <p class="class-time">Mon/Wed/Fri 6am–7am</p>
-                <p>
-                  Transform your physique with compound lifts and resistance
-                  programs designed to push your limits safely.
-                </p>
-                <ul>
-                  <li>Focus on compound movements</li>
-                  <li>Progressive overload for consistent gains</li>
-                  <li>Guidance from certified strength coaches</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Cardio Blast -->
-          <div class="class-card animate-fade-up">
-            <div class="card-image">
-              <img src="assets/images/cardio.jpg" alt="Cardio Blast" />
-              <div class="card-title-overlay">
-                <h3>Cardio Blast</h3>
-              </div>
-              <div class="card-content">
-                <p class="class-time">Tue/Thu 7am–8am</p>
-                <p>
-                  High-intensity sessions that challenge your stamina and
-                  accelerate metabolism.
-                </p>
-                <ul>
-                  <li>HIIT & endurance training</li>
-                  <li>Burn calories efficiently</li>
-                  <li>Boost energy & stamina</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Yoga & Recovery -->
-          <div class="class-card animate-fade-up">
-            <div class="card-image">
-              <img src="assets/images/yoga.jpg" alt="Yoga & Recovery" />
-              <div class="card-title-overlay">
-                <h3>Yoga & Recovery</h3>
-              </div>
-              <div class="card-content">
-                <p class="class-time">Sat 8am–9am</p>
-                <p>
-                  Restore your body, improve posture, and prepare for the week
-                  ahead.
-                </p>
-                <ul>
-                  <li>Flexibility & mobility</li>
-                  <li>Guided breathing & mindfulness</li>
-                  <li>Enhances recovery and prevents injury</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRICING SECTION -->
-    <section id="pricing" class="pricing">
-      <div class="container">
-        <h2 class="animate-fade-up">Membership Plans</h2>
-        <p class="animate-fade-up" style="text-align: center; margin-bottom: 30px">
-          Choose the plan that matches your commitment. Every membership comes
-          with 24/7 access, expert coaching, and a community that pushes you to
-          achieve results.
-        </p>
-
-        <div class="pricing-grid">
-          <!-- Starter -->
-          <div class="pricing-card starter animate-fade-up">
-            <h3>Starter</h3>
-            <p class="price">₹1,999 / month</p>
-            <ul>
-              <li>Unlimited gym access (operational hours)</li>
-              <li>Group classes: HIIT, Strength, Cardio</li>
-              <li>Basic fitness assessment & progress tracking</li>
-              <li>Community support</li>
-            </ul>
-          </div>
-
-          <!-- Pro -->
-          <div class="pricing-card pro animate-fade-up">
-            <h3>Pro</h3>
-            <p class="price">₹3,999 / month</p>
-            <ul>
-              <li>24/7 gym access</li>
-              <li>Personalized workout plans + group classes</li>
-              <li>Monthly one-on-one coaching sessions</li>
-              <li>Exclusive workshops & events</li>
-            </ul>
-          </div>
-
-          <!-- Elite -->
-          <div class="pricing-card elite animate-fade-up">
-            <h3>Elite</h3>
-            <p class="price">₹5,999 / month</p>
-            <ul>
-              <li>24/7 gym access with priority booking</li>
-              <li>Customized training programs + group classes</li>
-              <li>Weekly one-on-one coaching + nutrition guidance</li>
-              <li>VIP access to workshops, events & challenges</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Comparison Table -->
-        <div class="pricing-comparison animate-fade-up">
-          <h3>Plan Comparison</h3>
-          <div class="comparison-scroll">
-            <div class="comparison-grid" role="table" aria-label="Membership comparison">
-              <div class="comparison-header" role="row">
-                <div role="columnheader">Feature</div>
-                <div role="columnheader">Starter</div>
-                <div role="columnheader">Pro</div>
-                <div role="columnheader">Elite</div>
-              </div>
-
-              <div class="comparison-row" role="row">
-                <div role="cell">Gym Access</div>
-                <div role="cell">Operational Hours</div>
-                <div role="cell">24/7</div>
-                <div role="cell">24/7 (Priority)</div>
-              </div>
-
-              <div class="comparison-row" role="row">
-                <div role="cell">Group Classes</div>
-                <div role="cell">✔</div>
-                <div role="cell">✔</div>
-                <div role="cell">✔</div>
-              </div>
-
-              <div class="comparison-row" role="row">
-                <div role="cell">Personal Training</div>
-                <div role="cell">✖</div>
-                <div role="cell">✔</div>
-                <div role="cell">✔ (Weekly)</div>
-              </div>
-
-              <div class="comparison-row" role="row">
-                <div role="cell">Nutrition Guidance</div>
-                <div role="cell">✖</div>
-                <div role="cell">✖</div>
-                <div role="cell">✔</div>
-              </div>
-
-              <div class="comparison-row" role="row">
-                <div role="cell">Workshops & Events</div>
-                <div role="cell">✖</div>
-                <div role="cell">✔</div>
-                <div role="cell">✔ (VIP)</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TRAINERS SECTION -->
-    <section id="trainers" class="trainers">
-      <div class="container">
-        <h2 class="animate-fade-up">Meet Our Trainers</h2>
-        <div class="trainer-grid">
-          <div class="trainer-card animate-fade-up">
-            <img src="assets/images/trainer-1.jpg" alt="Trainer John Doe" />
-            <h3>John Doe</h3>
-            <p>Strength Coach</p>
-          </div>
-
-          <div class="trainer-card animate-fade-up">
-            <img src="assets/images/trainer-2.jpg" alt="Trainer Jane Smith" />
-            <h3>Jane Smith</h3>
-            <p>Nutritionist</p>
-          </div>
-
-          <div class="trainer-card animate-fade-up">
-            <img src="assets/images/trainer-3.jpg" alt="Trainer Mike Johnson" />
-            <h3>Mike Johnson</h3>
-            <p>Mobility Specialist</p>
-          </div>
-
-          <div class="trainer-card animate-fade-up">
-            <img src="assets/images/trainer-4.jpg" alt="Trainer Sarah Lee" />
-            <h3>Sarah Lee</h3>
-            <p>Functional Training</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS SECTION -->
-    <section id="testimonials" class="testimonials">
-      <div class="container">
-        <h2 class="animate-fade-up">What Our Members Say</h2>
-        <div class="testimonial-grid">
-          <div class="testimonial-card animate-fade-up">
-            <p class="quote">
-              "Iron Core pushed me to achieve goals I never thought possible."
-            </p>
-            <div class="author">
-              <img src="https://i.pravatar.cc/150?img=11" alt="Sarah K." />
-              <div>
-                <h4>Sarah K.</h4>
-                <span>Entrepreneur</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card animate-fade-up">
-            <p class="quote">
-              "One month in — my lifts went up, and I finally feel disciplined."
-            </p>
-            <div class="author">
-              <img src="https://i.pravatar.cc/150?img=32" alt="Ryan L." />
-              <div>
-                <h4>Ryan L.</h4>
-                <span>Software Engineer</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card animate-fade-up">
-            <p class="quote">
-              "The trainers here genuinely care. My strength and confidence
-              skyrocketed in just 3 months."
-            </p>
-            <div class="author">
-              <img src="https://i.pravatar.cc/150?img=47" alt="Melissa D." />
-              <div>
-                <h4>Melissa D.</h4>
-                <span>College Student</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card animate-fade-up">
-            <p class="quote">
-              "The community support is incredible. It keeps me coming back
-              every day."
-            </p>
-            <div class="author">
-              <img src="https://i.pravatar.cc/150?img=55" alt="James P." />
-              <div>
-                <h4>James P.</h4>
-                <span>Accountant</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card animate-fade-up">
-            <p class="quote">
-              "Best decision I’ve made for my health. The progress is real and
-              measurable."
-            </p>
-            <div class="author">
-              <img src="https://i.pravatar.cc/150?img=61" alt="Priya S." />
-              <div>
-                <h4>Priya S.</h4>
-                <span>Marketing Manager</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card animate-fade-up">
-            <p class="quote">
-              "Friendly trainers, motivating environment, and top-class
-              equipment."
-            </p>
-            <div class="author">
-              <img src="https://i.pravatar.cc/150?img=50" alt="Daniel H." />
-              <div>
-                <h4>Daniel H.</h4>
-                <span>Consultant</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQS SECTION  -->
-    <section id="faq" class="faq-section">
-      <div class="container">
-        <h2 class="section-title animate-fade-up">Frequently Asked Questions</h2>
-
-        <div class="faq-item animate-fade-up">
-          <div class="faq-question">What are your gym timings?</div>
-          <div class="faq-answer">
-            We are open Monday to Saturday from 6:00 AM to 10:00 PM. Sundays are
-            for rest and maintenance.
-          </div>
-        </div>
-
-        <div class="faq-item animate-fade-up">
-          <div class="faq-question">Do you offer personal training?</div>
-          <div class="faq-answer">
-            Yes, we have certified personal trainers available. You can book a
-            session via our contact form or at the reception.
-          </div>
-        </div>
-
-        <div class="faq-item animate-fade-up">
-          <div class="faq-question">What memberships do you offer?</div>
-          <div class="faq-answer">
-            We offer monthly, quarterly, and yearly memberships. Students and
-            corporate discounts are also available.
-          </div>
-        </div>
-
-        <div class="faq-item animate-fade-up">
-          <div class="faq-question">Is there a trial session?</div>
-          <div class="faq-answer">
-            Yes! We offer a free trial session for first-time visitors. Book via
-            our contact form or call us directly.
-          </div>
-        </div>
-
-        <div class="faq-item animate-fade-up">
-          <div class="faq-question">Do you have nutrition guidance?</div>
-          <div class="faq-answer">
-            Absolutely! Our trainers provide basic nutrition tips and customized
-            diet plans on request.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section id="contact" class="contact-cta">
-      <div class="container" style="text-align: center">
-        <h2 class="animate-fade-up">Get in Touch</h2>
-        <button class="btn btn-primary" id="openModal">Send Us a Message</button>
-        <button
-          class="btn btn-cta-secondary open-modal"
-          id="viewPrograms-cta"
-          data-modal="#bookCallModal"
-        >
-          Book a call
-        </button>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <!-- FOOTER -->
     <footer class="footer">
       <div class="container footer-grid">
-        <!-- Brand / About -->
         <div class="footer-about animate-fade-up">
           <div class="footer-logo">
             <img src="assets/logos/logo_with_label.png" alt="Iron Core Logo" />
@@ -553,17 +629,19 @@
           </div>
           <p>
             Hustle for Health – Build strength, resilience, and discipline with
-            expert trainers, elite equipment, and a community that pushes you
-            forward.
+            expert trainers, elite equipment, and a motivating community.
           </p>
           <div class="footer-social">
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
             <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
           </div>
         </div>
 
-        <!-- Quick Links -->
         <div class="footer-links animate-fade-up">
           <h4>Quick Links</h4>
           <ul>
@@ -577,15 +655,19 @@
           </ul>
         </div>
 
-        <!-- Contact Info -->
         <div class="footer-contact animate-fade-up">
           <h4>Contact Us</h4>
           <p><strong>Address:</strong> 123 Iron Street, Fitness City</p>
-          <p><strong>Phone:</strong> <a href="tel:+919876543210">+91 98765 43210</a></p>
-          <p><strong>Email:</strong> <a href="mailto:contact@ironcore.com">contact@ironcore.com</a></p>
+          <p>
+            <strong>Phone:</strong>
+            <a href="tel:+919876543210">+91 98765 43210</a>
+          </p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:contact@ironcore.com">contact@ironcore.com</a>
+          </p>
         </div>
 
-        <!-- Map -->
         <div class="footer-map animate-fade-up">
           <h4>Find Us</h4>
           <iframe
@@ -598,7 +680,6 @@
           ></iframe>
         </div>
       </div>
-
       <div class="footer-bottom">
         <p>&copy; 2025 Iron Core. All Rights Reserved.</p>
       </div>
@@ -612,7 +693,11 @@
         <form id="ctaForm">
           <input type="text" name="name" placeholder="Your Name" required />
           <input type="email" name="email" placeholder="Your Email" required />
-          <textarea name="message" placeholder="Your Message" required></textarea>
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            required
+          ></textarea>
           <button type="submit" class="btn btn-primary">Send</button>
           <p id="formFeedback" style="margin-top: 10px"></p>
         </form>
@@ -629,20 +714,62 @@
       aria-hidden="true"
     >
       <div class="modal-content">
-        <span class="close" role="button" aria-label="Close modal">&times;</span>
+        <span class="close" role="button" aria-label="Close modal"
+          >&times;</span
+        >
         <h3 id="bookCallTitle">Schedule a Call</h3>
-
         <form id="bookCallForm" class="book-call-form">
-          <input type="tel" name="phone" placeholder="Your Phone Number" required />
-          <input type="datetime-local" name="datetime" placeholder="Select date & time" required />
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Your Phone Number"
+            required
+          />
+          <input type="datetime-local" name="datetime" required />
           <button type="submit" class="btn btn-primary">Request Call</button>
           <p class="form-feedback" data-feedback style="margin-top: 10px"></p>
         </form>
       </div>
     </div>
 
-    <!-- Scripts -->
     <script src="js/main.js"></script>
     <script src="js/animation.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "IronCore Fitness",
+        "url": "https://abhisekmohantychinua.github.io/ironcore/",
+        "logo": "https://abhisekmohantychinua.github.io/ironcore/assets/images/logo.png",
+        "sameAs": [
+          "https://www.facebook.com/yourpage",
+          "https://www.instagram.com/yourpage"
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is IronCore Fitness?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "IronCore Fitness is a high-intensity gym offering expert trainers and personalized fitness programs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need prior experience to join classes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No prior experience is needed. We offer programs suitable for all levels."
+            }
+          }
+        ]
+      }
+    </script>
   </body>
 </html>
