@@ -267,7 +267,7 @@ document.querySelectorAll('.faq-question').forEach(q => {
 
     const cta = document.createElement('button');
     cta.className = 'btn-cta-primary toast-cta';
-    cta.textContent = 'Hire';
+    cta.textContent = 'Hire Me';
     cta.onclick = () => window.open(ctaUrl, '_blank');
 
     const closeBtn = document.createElement('span');

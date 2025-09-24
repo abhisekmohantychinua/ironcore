@@ -1095,8 +1095,7 @@ section p {
   text-align: center;
 }
 .contact-cta button {
-  margin-left: 5px;
-  margin-right: 5px;
+  margin: 5px;
 }
 
 /* ===========================
