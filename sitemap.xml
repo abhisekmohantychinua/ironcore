@@ -1,52 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <!-- Homepage -->
   <url>
     <loc>https://abhisekmohantychinua.github.io/ironcore/</loc>
-    <priority>1.0</priority>
+    <lastmod>2025-09-24</lastmod>
   </url>
-  
-  <!-- About Section -->
-  <url>
-    <loc>https://abhisekmohantychinua.github.io/ironcore/#about</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Classes Section -->
-  <url>
-    <loc>https://abhisekmohantychinua.github.io/ironcore/#classes</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Pricing Section -->
-  <url>
-    <loc>https://abhisekmohantychinua.github.io/ironcore/#pricing</loc>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Trainers Section -->
-  <url>
-    <loc>https://abhisekmohantychinua.github.io/ironcore/#trainers</loc>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Testimonials Section -->
-  <url>
-    <loc>https://abhisekmohantychinua.github.io/ironcore/#testimonials</loc>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- FAQ Section -->
-  <url>
-    <loc>https://abhisekmohantychinua.github.io/ironcore/#faq</loc>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Contact Section -->
-  <url>
-    <loc>https://abhisekmohantychinua.github.io/ironcore/#contact</loc>
-    <priority>0.7</priority>
-  </url>
-
 </urlset>
